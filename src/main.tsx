@@ -7,6 +7,8 @@ import Guest from "./components/Guest";
 import Home from "./pages/Home";
 import "./index.css";
 import App from "./App.tsx";
+import GamePage from "./pages/GamePage.tsx";
+import Menu from "./pages/Menu.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -17,6 +19,8 @@ createRoot(document.getElementById("root")!).render(
         <Route path="login" element={<LogIn />} />
         <Route path="signIn" element={<SignIn />} />
         <Route path="guest" element={<Guest />} />
+        <Route path="menu" element={<Menu />} />
+        <Route path="game" element={<GamePage />} />
       </Routes>
     </BrowserRouter>{" "}
   </StrictMode>

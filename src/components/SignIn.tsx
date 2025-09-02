@@ -12,7 +12,7 @@ export default function SignIn() {
         <button
           type="submit"
           onClick={() => {
-            navigate("/home");
+            navigate("/logIn");
           }}
         >
           Sign in

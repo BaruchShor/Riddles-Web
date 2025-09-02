@@ -1,11 +1,16 @@
 import "./App.css";
+import Game from "./components/Game";
+import CreateNewRiddle from "./context/AddedRiddles.context";
 import LogInPage from "./pages/LogInPage";
 
 function App() {
   return (
     <>
       <h1>Hi</h1>
-      <LogInPage />
+      <CreateNewRiddle>
+        <LogInPage />
+        <Game />
+      </CreateNewRiddle>
     </>
   );
 }

@@ -12,7 +12,16 @@ export default function LogIn() {
         <button
           type="submit"
           onClick={() => {
-            navigate("/home");
+            navigate("/menu", {
+              state: {
+                menu: [
+                  "press here to play a game.",
+                  "press here to update your account",
+                  "press here to see the liderboard.",
+                  "press here to exit",
+                ],
+              },
+            });
           }}
         >
           Log In

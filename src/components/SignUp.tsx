@@ -6,11 +6,11 @@ export default function SignUp() {
   const [userId, setUserId] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    setError(null); // איפוס הודעת השגיאה
+    setError(null);
 
     try {
       const response = await fetch("http://localhost:5000/users/signup", {
@@ -25,20 +25,18 @@ export default function SignUp() {
         }),
       });
 
-      // בדיקה אם התגובה היא 200 (OK)
       if (response.status === 200) {
-        console.log("Log in successfuly");
+        console.log("Sign in successfuly");
 
-        // עכשיו מבצעים ניווט לאחר התחברות מוצלחת
         navigate("logIn");
       } else {
-        // אם הסטטוס אינו 200, קורא את הודעת השגיאה מהתגובה
         const errorMessage = await response.json();
         setError(errorMessage);
       }
     } catch (err) {
-      // שגיאה כללית, כמו חוסר חיבור לשרת
-      setError(err.message);
+      if (err instanceof Error) {
+        setError(err.message);
+      }
     }
   };
 

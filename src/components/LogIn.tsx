@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-
 export default function LogIn() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -13,17 +12,20 @@ export default function LogIn() {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:5000/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: username,
-          password: password,
-        }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://riddleservies.onrender.com/users/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: username,
+            password: password,
+          }),
+          credentials: "include",
+        }
+      );
 
       if (response.status === 200) {
         console.log("Log in successfuly");
@@ -45,10 +47,11 @@ export default function LogIn() {
         const errorMessage = await response.json();
         setError(errorMessage);
       }
-    } catch (err){
-    if(err instanceof Error) {
-      setError(err.message);
-    }}
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      }
+    }
   };
 
   return (

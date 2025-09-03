@@ -13,17 +13,20 @@ export default function SignUp() {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:5000/users/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id: userId,
-          name: username,
-          password: password,
-        }),
-      });
+      const response = await fetch(
+        "https://riddleservies.onrender.com/susers/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: userId,
+            name: username,
+            password: password,
+          }),
+        }
+      );
 
       if (response.status === 200) {
         console.log("Sign in successfuly");

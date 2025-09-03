@@ -31,7 +31,7 @@ export default function SignUp() {
       if (response.status === 200) {
         console.log("Sign in successfuly");
 
-        navigate("logIn");
+        navigate("login");
       } else {
         const errorMessage = await response.json();
         setError(errorMessage);

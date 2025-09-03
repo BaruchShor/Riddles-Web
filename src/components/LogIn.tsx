@@ -31,6 +31,10 @@ export default function LogIn() {
         console.log("Log in successfuly");
 
         const data = await response.json();
+
+        if (data.token) {
+          localStorage.setItem("token", data.token);
+        }
         console.log("Response from server:", data);
 
         navigate("/menu", {

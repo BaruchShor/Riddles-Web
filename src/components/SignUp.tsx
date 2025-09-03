@@ -14,7 +14,7 @@ export default function SignUp() {
 
     try {
       const response = await fetch(
-        "https://riddleservies.onrender.com/susers/signup",
+        "https://riddleservies.onrender.com/users/signup",
         {
           method: "POST",
           headers: {

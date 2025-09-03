@@ -11,6 +11,7 @@ import Menu from "./pages/Menu.tsx";
 import Game from "./components/Game.tsx";
 import CreateNewRiddle from "./context/AddedRiddles.context.tsx";
 import SignUp from "./components/SignUp.tsx";
+import LeaderBoard from "./pages/LeaderBoard.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="menu" element={<Menu />} />
           <Route path="game" element={<GamePage />} />
           <Route path="play" element={<Game />} />
+          <Route path="leaderboard" element={<LeaderBoard />} />
         </Routes>
       </BrowserRouter>{" "}
     </CreateNewRiddle>

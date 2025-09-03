@@ -15,7 +15,7 @@ export default function LogInPage() {
         <button
           type="submit"
           onClick={() => {
-            navigate("/signIn");
+            navigate("/signup");
           }}
         >
           Sign in

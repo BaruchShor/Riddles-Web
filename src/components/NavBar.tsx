@@ -7,8 +7,8 @@ export default function NavBar() {
         <NavLink to="/login" end>
           login
         </NavLink>
-        <NavLink to="/signIn" end>
-          signIn
+        <NavLink to="/signup" end>
+          signUp
         </NavLink>
         <NavLink to="/guest" end>
           guest

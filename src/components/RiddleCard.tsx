@@ -12,7 +12,7 @@ export default function RiddleCard({
         <h3>{`difficulty ${difficulty}`}</h3>
         <p>{question}</p>
         <form action="">
-          {options.map((o, index) => {
+          {options.map((o) => {
             console.log(o);
             return (
               <label>

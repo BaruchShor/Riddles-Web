@@ -4,7 +4,9 @@ import type IRiddle from "../interfacas/IRiddle";
 
 export const cnr = createContext<IRiddleContext>({
   riddlesList: [],
-  setRiddles: (obj: IRiddle[]) => {},
+  setRiddles: (obj: IRiddle[]) => {
+    obj;
+  },
 });
 
 export default function CreateNewRiddle({ children }: PropsWithChildren) {

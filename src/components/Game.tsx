@@ -9,8 +9,8 @@ export default function Game() {
   return (
     <>
       <section>
-        {riddlesList.map((riddleObj: IRiddle) => {
-          return <RiddleCard {...riddleObj} />;
+        {riddlesList.map((riddleObj: IRiddle, index: number) => {
+          return <RiddleCard key={index} {...riddleObj} />;
         })}
       </section>
     </>

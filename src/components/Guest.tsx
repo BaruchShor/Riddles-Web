@@ -7,7 +7,7 @@ export default function Guest() {
       <h2>Hi from guest</h2>
       <button
         onClick={() => {
-          navigate("/game");
+          navigate("/play");
         }}
       >
         Click here to play a game

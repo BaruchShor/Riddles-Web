@@ -1,9 +1,10 @@
 import { createContext, useState, type PropsWithChildren } from "react";
+import type IRiddleContext from "../interfacas/IRiddleContext";
 
-export const cnr = createContext();
+export const cnr = createContext<IRiddleContext | null>(null);
 
 export default function CreateNewRiddle({ children }: PropsWithChildren) {
-  const mathRiddles = [
+  let mathRiddles = [
     {
       question: "כמה זה 1 + 2?",
       options: ["2", "3", "4", "5"],
@@ -97,7 +98,6 @@ export default function CreateNewRiddle({ children }: PropsWithChildren) {
   ];
 
   const [riddlesList, setRiddles] = useState<object[]>(mathRiddles);
-  console.log(riddlesList);
   return (
     <cnr.Provider value={{ riddlesList, setRiddles }}>{children}</cnr.Provider>
   );

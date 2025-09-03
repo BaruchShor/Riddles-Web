@@ -12,11 +12,13 @@ export default function RiddleCard({
         <h3>{`difficulty ${difficulty}`}</h3>
         <p>{question}</p>
         <form action="">
-          {options.map((o) => {
+          {options.map((o, index) => {
+            console.log(o);
             return (
-              <input type="radio" name={correctAnswer}>
+              <label>
                 {o}
-              </input>
+                <input type="radio" name={correctAnswer} />
+              </label>
             );
           })}
           <button type="submit">Send</button>

@@ -9,19 +9,24 @@ import "./index.css";
 import App from "./App.tsx";
 import GamePage from "./pages/GamePage.tsx";
 import Menu from "./pages/Menu.tsx";
+import Game from "./components/Game.tsx";
+import CreateNewRiddle from "./context/AddedRiddles.context.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="home" element={<Home />} />
-        <Route path="login" element={<LogIn />} />
-        <Route path="signIn" element={<SignIn />} />
-        <Route path="guest" element={<Guest />} />
-        <Route path="menu" element={<Menu />} />
-        <Route path="game" element={<GamePage />} />
-      </Routes>
-    </BrowserRouter>{" "}
+    <CreateNewRiddle>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="home" element={<Home />} />
+          <Route path="login" element={<LogIn />} />
+          <Route path="signIn" element={<SignIn />} />
+          <Route path="guest" element={<Guest />} />
+          <Route path="menu" element={<Menu />} />
+          <Route path="game" element={<GamePage />} />
+          <Route path="play" element={<Game />} />
+        </Routes>
+      </BrowserRouter>{" "}
+    </CreateNewRiddle>
   </StrictMode>
 );

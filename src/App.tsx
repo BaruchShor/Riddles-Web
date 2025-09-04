@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import "./App.css";
-import LogInPage from "./pages/LogInPage";
 import { Outlet, useNavigate } from "react-router";
 import Header from "./components/Header";
 import Footer from "./components/Footer";

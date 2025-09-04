@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import "../style/LogIn.css";
 
 export default function LogIn() {
   const navigate = useNavigate();
@@ -59,8 +60,8 @@ export default function LogIn() {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <article id="logIn">
+      <form id="loginForm" onSubmit={handleSubmit}>
         <label htmlFor="userName">User name</label>
         <input
           type="text"
@@ -80,6 +81,6 @@ export default function LogIn() {
         <button type="submit">Log in</button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
-    </>
+    </article>
   );
 }

@@ -1,11 +1,16 @@
 import type IRiddle from "../interfacas/IRiddle.tsx";
 
+type RiddleCardProps = IRiddle & {
+  next: () => void;
+};
+
 export default function RiddleCard({
   question,
   options,
   correctAnswer,
   difficulty,
-}: IRiddle) {
+  next,
+}: RiddleCardProps) {
   return (
     <>
       <article>
@@ -21,7 +26,9 @@ export default function RiddleCard({
               </label>
             );
           })}
-          <button type="submit">Send</button>
+          <button type="button" onClick={next}>
+            Send
+          </button>
         </form>
       </article>
     </>

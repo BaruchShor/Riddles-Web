@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { cnr } from "../context/AddedRiddles.context";
 
-export default function CreatePlayer() {
+export default function CreateRiddle() {
   const { riddlesList, setRiddles } = useContext(cnr);
   console.log(riddlesList);
   return (

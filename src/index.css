@@ -1,0 +1,13 @@
+body {
+  background-color: rgba(245, 245, 220, 0.452);
+  margin: 0%;
+}
+
+#root {
+  margin: 0%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

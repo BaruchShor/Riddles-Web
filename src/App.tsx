@@ -1,22 +1,49 @@
 import { useEffect } from "react";
 import "./App.css";
-import CreatePlayer from "./components/CreateRiddle";
 import LogInPage from "./pages/LogInPage";
-import { useNavigate } from "react-router";
+import { Outlet, useNavigate } from "react-router";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const navigate = useNavigate();
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      navigate("/play");
-    }
-  });
+    const checkToken = async () => {
+      const token = localStorage.getItem("token");
+      console.log("check token", token);
+      if (!token) return;
+      try {
+        const res = await fetch(
+          "https://riddleservies.onrender.com/users/validate",
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        const data = await res.json();
+        console.log("check data", data);
+
+        if (data.valid) {
+          navigate("/home");
+        } else {
+          localStorage.removeItem("token");
+        }
+      } catch {
+        localStorage.removeItem("token");
+      }
+    };
+    checkToken();
+  }, []);
   return (
     <>
-      <h1>Hi</h1>
-      <LogInPage />
-      <CreatePlayer />
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </>
   );
 }

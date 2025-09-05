@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import "../style/LogIn.css";
+import "../style/SignLog.css";
 
 export default function LogIn() {
   const navigate = useNavigate();
@@ -64,6 +64,7 @@ export default function LogIn() {
       <form id="loginForm" onSubmit={handleSubmit}>
         <label htmlFor="userName">User name</label>
         <input
+          className="signInput"
           type="text"
           id="userName"
           value={username}
@@ -72,13 +73,16 @@ export default function LogIn() {
         />
         <label htmlFor="password">Password</label>
         <input
+          className="signInput"
           type="password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Log in</button>
+        <button id="logBtn" className="signInput" type="submit">
+          Log in
+        </button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </article>
